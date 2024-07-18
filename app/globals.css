@@ -1,0 +1,113 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  @apply bg-zinc-900 text-[#AA8A61] pt-14;
+}
+
+h1 {
+  @apply text-4xl font-bold text-center;
+}
+
+h2 {
+  @apply text-2xl font-bold w-fit mx-auto mt-12 relative bg-zinc-900 px-2
+  before:content-[''] before:absolute before:left-1/2 before:-translate-x-1/2 
+  before:top-1/2 before:-translate-y-1/2 before:-z-10
+  before:w-[150%] before:h-[2px] before:bg-[#AA8A61];
+}
+
+.container.cats {
+  @apply flex flex-col items-center gap-6 mx-auto p-2 py-5;
+}
+
+.cat__btn {
+  @apply text-white font-bold text-xl px-4 py-2 rounded-[5px]
+  border-b-2 border-b-[#AA8A61] 
+  hover:text-[#AA8A61] transition-colors duration-300 ease-in-out w-full;
+}
+
+.main__input,
+.main__btn {
+  @apply px-4 py-2 w-[250px] text-white rounded-[6px];
+}
+
+.main__input ~ p {
+  @apply w-[250px];
+}
+
+.main__input {
+  @apply bg-zinc-900 outline-none border-2 border-[#AA8A61] transition-colors focus:border-white;
+}
+
+.main__btn {
+  @apply bg-[#AA8A61] opacity-90 hover:opacity-100 transition-opacity duration-300 ease-in-out;
+}
+
+.search__input {
+  @apply px-4 py-2 w-full text-white rounded-[6px] bg-transparent outline-none border-2 
+  focus:border-[#AA8A61]
+  transition-colors border-white my-3;
+}
+
+/* Spinner */
+/* SVG spinner icon animation */
+.spinner {
+  -webkit-animation: rotate 2s linear infinite;
+  animation: rotate 2s linear infinite;
+  z-index: 2;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  margin: -25px 0 0 -25px;
+  width: 50px;
+  height: 50px;
+}
+.spinner .path {
+  stroke: #cccccc;
+  stroke-linecap: round;
+  -webkit-animation: dash 1.5s ease-in-out infinite;
+  animation: dash 1.5s ease-in-out infinite;
+}
+
+@-webkit-keyframes rotate {
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes rotate {
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+@-webkit-keyframes dash {
+  0% {
+    stroke-dasharray: 1, 150;
+    stroke-dashoffset: 0;
+  }
+  50% {
+    stroke-dasharray: 90, 150;
+    stroke-dashoffset: -35;
+  }
+  100% {
+    stroke-dasharray: 90, 150;
+    stroke-dashoffset: -124;
+  }
+}
+@keyframes dash {
+  0% {
+    stroke-dasharray: 1, 150;
+    stroke-dashoffset: 0;
+  }
+  50% {
+    stroke-dasharray: 90, 150;
+    stroke-dashoffset: -35;
+  }
+  100% {
+    stroke-dasharray: 90, 150;
+    stroke-dashoffset: -124;
+  }
+}
